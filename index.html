@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My Todo List</title>
+	<link rel="stylesheet" type="text/css" href="application.css" />
+	<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Annie Use Your Telescope';font-size: 22px;
+}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+	<h1 class="title">To do list</h1>
+	<form accept-charset="UTF-8" action="https://cloudappservices-api.herokuapp.com/todos" method="POST" id="todo_form" autocomplete="off">
+	<input type="text" name="todo[task]" value="" id="task_input"/>
+	<input type="submit" value="Add to list" onclick="window.sendForm(event)" class="task_submit"/>
+	
+	</form>
+	<div id="container">
+	</div>
+	</div>
+</body>
+<footer>
+<script type="text/javascript" src="application.js"></script>
+</footer>
+</html>

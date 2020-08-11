@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+html{
+		background-color: #FFFF88;
+}
+
+.wrapper {
+	text-align: center;
+}
+
+
+.title {
+	display: inline-block;
+}
+
+#todo_form{
+	text-align: center;
+}
+
+#task_input{
+	display: inlin-block;
+	background-color: #E0E0E0;
+	padding: 1em;
+	font-size: 20px;
+	border: none;
+}
+
+#task_input:hover {
+  background-color: #F5F5F5;
+}
+
+#task_input:focus {
+  background-color: #fff;
+}
+
+.task_submit{
+display: inline-block;
+  padding: 1em;
+  font-size: 20px;
+  margin: 0;
+  background-color: #003cffb2;
+  color: #fff;
+  border: none;
+}
+
+.task_submit:hover {
+  background-color: #003cffd7;
+}
+.task_submit:focus {
+  background-color: #003cff;
+}
+
+#container {
+  padding: 1em;
+  width: 750px;
+  display: inline-block;
+}
+
+.task {
+  padding: 1em;
+  margin: 1em;
+  font-size: 20px;
+  background-color: #8cf0ff;
+  border-radius: 10px;
+}
+
+.task:hover {
+  background-color: rgba(245, 134, 134, 0.65);
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}

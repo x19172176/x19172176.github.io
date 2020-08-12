@@ -17,11 +17,32 @@ window.onload = async () => {
   await configureClient();
 }
 
-window.onload = async () => {
-  await configureClient();
 
-  // NEW - update the UI state
+window.onload = async () => {
+
+  // .. code ommited for brevity
+
   updateUI();
+
+  const isAuthenticated = await auth0.isAuthenticated();
+
+  if (isAuthenticated) {
+    // show the gated content
+    return;
+  }
+
+  // NEW - check for the code and state parameters
+  const query = window.location.search;
+  if (query.includes("code=") && query.includes("state=")) {
+
+    // Process the login state
+    await auth0.handleRedirectCallback();
+    
+    updateUI();
+
+    // Use replaceState to redirect the user away and remove the querystring parameters
+    window.history.replaceState({}, document.title, "/");
+  }
 };
 
 // NEW
@@ -32,6 +53,11 @@ const updateUI = async () => {
   document.getElementById("btn-login").disabled = isAuthenticated;
 };
 
+const login = async () => {
+  await auth0.loginWithRedirect({
+    redirect_uri: window.location.origin
+  });
+};
 function getTasks() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -90,6 +116,12 @@ function deleteResponse(response_id) {
   };
   xhttp.send(null);
 }
+
+const logout = () => {
+  auth0.logout({
+    returnTo: window.location.origin
+  });
+};
 getTasks();
 
 // Initialize and add the map

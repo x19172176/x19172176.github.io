@@ -1,6 +1,6 @@
 var elementAdditionPosition = "beforeend";
 
-
+let auth0 = null;
 
 
 function getTasks() {

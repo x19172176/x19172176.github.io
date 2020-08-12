@@ -1,5 +1,5 @@
 var elementAdditionPosition = "beforeend";
-
+import firebase from 'firebase'
 
 function getTasks() {
   var xhttp = new XMLHttpRequest();

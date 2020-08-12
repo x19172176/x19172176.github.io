@@ -46,12 +46,29 @@ window.onload = async () => {
 };
 
 // NEW
-const updateUI = async () => {
+const updateUI = async () => { 
   const isAuthenticated = await auth0.isAuthenticated();
 
   document.getElementById("btn-logout").disabled = !isAuthenticated;
   document.getElementById("btn-login").disabled = isAuthenticated;
+  
+  // NEW - add logic to show/hide gated content after authentication
+  if (isAuthenticated) {
+    document.getElementById("gated-content").classList.remove("hidden");
+
+    document.getElementById(
+      "ipt-access-token"
+    ).innerHTML = await auth0.getTokenSilently();
+
+    document.getElementById("ipt-user-profile").textContent = JSON.stringify(
+      await auth0.getUser()
+    );
+
+  } else {
+    document.getElementById("gated-content").classList.add("hidden");
+  }
 };
+
 
 const login = async () => {
   await auth0.loginWithRedirect({

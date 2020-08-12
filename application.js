@@ -1,5 +1,6 @@
 var elementAdditionPosition = "beforeend";
 
+
 function getTasks() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -58,12 +59,18 @@ function deleteResponse(response_id) {
   };
   xhttp.send(null);
 }
+
+const logout = () => {
+  auth0.logout({
+    returnTo: window.location.origin
+  });
+};
 getTasks();
 
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
+  var uluru = {lat: 53.321134, lng: -6.317649};
   // The map, centered at Uluru
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 4, center: uluru});
@@ -71,6 +78,7 @@ function initMap() {
   var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
+<<<<<<< HEAD
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -78,3 +86,7 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }
+=======
+
+
+>>>>>>> 2565176f71a4790ba52b2a2e86ea901741be68de

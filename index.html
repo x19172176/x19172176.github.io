@@ -6,7 +6,8 @@
 	<title>My Todo List</title>
 	<link rel="stylesheet" type="text/css" href="application.css" />
 	<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
-
+	<meta name="google-signin-client_id" content="436465418792-sjkus8s5biir1v2o1c0n9hq9q1c9mmph.apps.googleusercontent.com
+.apps.googleusercontent.com">
 
 <style>
 body {
@@ -22,22 +23,32 @@ body {
     </style>
 </head>
 <body>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 	<div class="wrapper">
 	<h1 class="title">To do list</h1>
 	<form accept-charset="UTF-8" action="https://cloudappservices-api.herokuapp.com/todos" method="POST" id="todo_form" autocomplete="off">
 	<input type="text" name="todo[task]" value="" id="task_input"/>
 	<input type="submit" value="Add to list" onclick="window.sendForm(event)" class="task_submit"/>
+	<a href="#" onclick="signOut();">Sign out</a>
 	</form>
 	<div id="container">
 	</div>
 	</div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <!-- Replace the value of the key parameter with your own API key. -->
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
 <script defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7v_mweoO2lcbzFZElDMTkmX_cuWDcjOA&callback=initMap">
 </script>
-
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
 </body>
 <footer>
 <script type="text/javascript" src="application.js"></script>

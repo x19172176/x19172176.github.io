@@ -72,3 +72,8 @@ function initMap() {
   var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
+function signOut() {
+  gapi.auth2.getAuthInstance().signOut().then(function() {
+    console.log('user signed out')
+  })
+}

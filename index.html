@@ -11,6 +11,13 @@ body {
     font-family: 'Annie Use Your Telescope';font-size: 22px;
 }
 </style>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
 </head>
 <body>
 	<div class="wrapper">
@@ -23,6 +30,13 @@ body {
 	<div id="container">
 	</div>
 	</div>
+
+<!-- Replace the value of the key parameter with your own API key. -->
+<div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7v_mweoO2lcbzFZElDMTkmX_cuWDcjOA&callback=initMap">
+</script>
 </body>
 <footer>
 <script type="text/javascript" src="application.js"></script>

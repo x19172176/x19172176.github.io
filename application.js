@@ -82,5 +82,8 @@ function initMap() {
     appId: "1:436465418792:web:b02689ea837d9dec8eeb1d",
     measurementId: "G-HGL61M81VC"
   };
+   firebase.initializeApp(config);
 
+  // Get a reference to the database service
+  var database = firebase.database();
 

@@ -1,5 +1,16 @@
 var elementAdditionPosition = "beforeend";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyB7v_mweoO2lcbzFZElDMTkmX_cuWDcjOA",
+  authDomain: "eddieproject.firebaseapp.com",
+  databaseURL: "https://eddieproject.firebaseio.com",
+  projectId: "eddieproject",
+  storageBucket: "eddieproject.appspot.com",
+  messagingSenderId: "436465418792",
+  appId: "1:436465418792:web:b02689ea837d9dec8eeb1d",
+  measurementId: "G-HGL61M81VC"
+};
+
 
 function getTasks() {
   var xhttp = new XMLHttpRequest();

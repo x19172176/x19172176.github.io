@@ -6,6 +6,8 @@
 	<title>My Todo List</title>
 	<link rel="stylesheet" type="text/css" href="application.css" />
 	<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+	<meta name="google-signin-client_id" content="436465418792-sjkus8s5biir1v2o1c0n9hq9q1c9mmph.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer>
 <style>
 body {
     font-family: 'Annie Use Your Telescope';font-size: 22px;
@@ -20,6 +22,7 @@ body {
     </style>
 </head>
 <body>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 	<div class="wrapper">
 	<h1 class="title">To do list</h1>
 	<form accept-charset="UTF-8" action="https://cloudappservices-api.herokuapp.com/todos" method="POST" id="todo_form" autocomplete="off">
@@ -37,6 +40,13 @@ body {
 <script defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7v_mweoO2lcbzFZElDMTkmX_cuWDcjOA&callback=initMap">
 </script>
+  <script>
+    function onSignIn(googleUser) {
+      // get user profile information
+      console.log(googleUser.getBasicProfile())
+    }
+  </script>
+  <button onclick="signOut()">Sign out</button>
 </body>
 <footer>
 <script type="text/javascript" src="application.js"></script>

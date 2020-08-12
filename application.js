@@ -1,5 +1,11 @@
 var elementAdditionPosition = "beforeend";
 
+function signOut() {
+  gapi.auth2.getAuthInstance().signOut().then(function() {
+    console.log('user signed out')
+  })
+}
+
 function getTasks() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {

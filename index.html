@@ -52,7 +52,7 @@ body {
             oktaSignIn.tokenManager.add('accessToken', accessToken);
             oktaSignIn.tokenManager.add('idToken', idToken);
 
-            window.location.assign("https://x19172176.github.io/todos");
+            window.location.hash='';
             document.getElementById("messageBox").innerHTML = "Hello, " + idToken.claims.email + "! You just logged in! :)";
           },
           function error(err) {

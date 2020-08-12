@@ -48,7 +48,6 @@ body {
     </style>
 </head>
 <body>
-<body>
   <h1>Welcome</h1>
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
@@ -59,7 +58,7 @@ body {
   </script>
   <script>
   function x(googleUser){
-	if onSignIn(){
+	if onSignIn(true){
 	window.location.assign("todos/index");
 	}
 	}
@@ -71,7 +70,6 @@ body {
           }
  </script>
  <button onclick="signOut()">Sign out</button>
-</body>
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
 <script defer

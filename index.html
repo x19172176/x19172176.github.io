@@ -5,7 +5,6 @@
 	<meta charset="UTF-8">
 	<title>My Todo List</title>
 	<link rel="stylesheet" type="text/css" href="application.css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
 
 <style>
@@ -13,77 +12,22 @@ body {
     font-family: 'Annie Use Your Telescope';font-size: 22px;
 }
 </style>
-	
-	</style>
-    <!-- widget stuff here -->
-    <script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/js/okta-sign-in.min.js" type="text/javascript"></script>
-    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
-    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-theme.css" type="text/css" rel="stylesheet"/>
 </head>
-  <body>
-    <div class="container">
-      <h1 class="title">To do list</h1>
-      <div id="messageBox" class="jumbotron">
-        You are not logged in. Get outta here! Shoo!
-      </div>
-      <!-- where the sign-in form will be displayed -->
-      <div id="okta-login-container"></div>
-    </div>
-    <script type="text/javascript">
-      var oktaSignIn = new OktaSignIn({
-        baseUrl: "{{ https://x19172176.github.io/ }}",
-        clientId: "{{ 0oaptj4kp7Cxd6POn4x6 }}",
-        authParams: {
-          issuer: "default",
-          responseType: ['token', 'id_token'],
-          display: 'page'
-        }
-      });
-
-      if (oktaSignIn.token.hasTokensInUrl()) {
-        oktaSignIn.token.parseTokensFromUrl(
-          // If we get here, the user just logged in.
-          function success(res) {
-            var accessToken = res[0];
-            var idToken = res[1];
-
-            oktaSignIn.tokenManager.add('accessToken', accessToken);
-            oktaSignIn.tokenManager.add('idToken', idToken);
-
-            window.location.hash='';
-            //document.getElementById("messageBox").innerHTML = "Hello, " + idToken.claims.email + "! You just logged in! :)";
-				<div class="wrapper">
-					<form accept-charset="UTF-8" action="https://cloudappservices-api.herokuapp.com/todos" method="POST" id="todo_form" autocomplete="off">
-					<input type="text" name="todo[task]" value="" id="task_input"/>
-						<input type="submit" value="Add to list" onclick="window.sendForm(event)" class="task_submit"/>
-						</form>
-						<div id="container">
-						</div>
-						</div>
-          },
-          function error(err) {
-            console.error(err);
-          }
-        );
-      } else {
-        oktaSignIn.session.get(function (res) {
-          // If we get here, the user is already signed in.
-          if (res.status === 'ACTIVE') {
-            document.getElementById("messageBox").innerHTML = "Hello, " + res.login + "! You are *still* logged in! :)";
-            return;
-          }
-          oktaSignIn.renderEl(
-            { el: '#okta-login-container' },
-            function success(res) {},
-            function error(err) {
-              console.error(err);
-            }
-          );
-        });
-      }
-    </script>
-	  
-  </body>
+<body>
+	<div class="wrapper">
+	<h1 class="title">To do list</h1>
+	<form accept-charset="UTF-8" action="https://cloudappservices-api.herokuapp.com/todos" method="POST" id="todo_form" autocomplete="off">
+	<input type="text" name="todo[task]" value="" id="task_input"/>
+	<input type="submit" value="Add to list" onclick="window.sendForm(event)" class="task_submit"/>
+	</form>
+	<div id="container">
+	</div>
+<div id="map"></div>
+<script defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7v_mweoO2lcbzFZElDMTkmX_cuWDcjOA&callback=initMap">
+</script>
+	<meta name="google-site-verification" content="Ndnx3z26KZBvDjB44MuQS35-WsWrgaotNWnUfWJ__yA" />
+</body>
 <footer>
 <script type="text/javascript" src="application.js"></script>
 </footer>

@@ -58,7 +58,7 @@ function deleteResponse(response_id) {
   };
   xhttp.send(null);
 }
-<<<<<<< HEAD
+
 getTasks();
 
 // Initialize and add the map
@@ -72,6 +72,3 @@ function initMap() {
   var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
-=======
-getTasks();
->>>>>>> parent of 046f099... Another commit

@@ -8,10 +8,10 @@ import createAuth0Client from "@auth0/auth0-spa-js";
 ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
 
 const auth0Options = {
-    response: 'code',
+    
     domain: 'dev-pqtsvwwf.eu.auth0.com',
     client_id: 'ga9YZ80sLf04KAH5vtbXhHAbDt9KFQrc',
-    redirect_uri: 'http://localhost:3000/'
+    redirect_uri: 'htts://x19172176.github.io/'
 }
 
 // initiate auth0 client

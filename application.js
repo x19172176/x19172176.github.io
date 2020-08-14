@@ -72,4 +72,6 @@ function initMap() {
   var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
-
+var correctCaptcha = function(response) {
+        alert(response);
+    };

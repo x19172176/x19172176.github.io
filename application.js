@@ -75,3 +75,14 @@ function initMap() {
 var correctCaptcha = function(response) {
         alert(response);
     };
+
+function submit(){ 
+     var response = grecaptcha`.`getResponse();
+     if(response != '0'){
+           //captcha validated and got response code
+           alert("the captcha has been filled");
+     }else{
+           //not validated or not clicked
+           alert("Please fill the captcha!");
+     }
+}

@@ -12,7 +12,9 @@ body {
     font-family: 'Annie Use Your Telescope';font-size: 22px;
 }
 </style>
-
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 </head>
 <body>
 	<div class="wrapper">
@@ -21,11 +23,6 @@ body {
 	<input type="text" name="todo[task]" value="" id="task_input"/>
 	<input type="submit" value="Add to list" onclick="window.sendForm(event)" class="task_submit"/>
 		    <script type="text/javascript">
-      var onloadCallback = function() {
-        grecaptcha.render('html_element', {
-          'sitekey' : '6Ldb874ZAAAAAJx4n1rGTJKv3EqC9Wt5BwEotMQI'
-        });
-      };
     </script>
 	</form>
 	<div id="container">
@@ -34,10 +31,6 @@ body {
 <script defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7v_mweoO2lcbzFZElDMTkmX_cuWDcjOA&callback=initMap">
 </script>
-	    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
-    </script>
-
 </body>
 <footer>
 <script type="text/javascript" src="application.js"></script>

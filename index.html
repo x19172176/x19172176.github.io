@@ -20,8 +20,11 @@ body {
 	<form accept-charset="UTF-8" action="https://cloudappservices-api.herokuapp.com/todos" method="POST" id="todo_form" autocomplete="off">
 	<input type="text" name="todo[task]" value="" id="task_input"/>
 	<input type="submit" value="Add to list" onclick="window.sendForm(event)" class="task_submit"/>
-		    <script type="text/javascript">
-		 <div class="g-reCAPTCHA" data-sitekey="6LeK874ZAAAAAAD9czwwfS9MflWzu59JlqHAvw7_"></div>
+       <div class="form-group">
+       <div class="g-recaptcha" data-sitekey="6LeK874ZAAAAAAD9czwwfS9MflWzu59JlqHAvw7_" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+       <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+       <div class="help-block with-errors"></div>
+       </div>
 	    
     </script>
 	</form>
@@ -33,6 +36,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7v_mweoO2lcbzFZElDMTkmX_
 </script>
 </body>
 <footer>
+ <script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="application.js"></script>
 </footer>
 </html>

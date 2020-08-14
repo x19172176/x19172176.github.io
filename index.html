@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>My Todo List</title>
-	<link rel="stylesheet" type="text/css" href="application.css" />
-	<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
-	<meta name="google-signin-client_id" content="436465418792-sjkus8s5biir1v2o1c0n9hq9q1c9mmph.apps.googleusercontent.com
-.apps.googleusercontent.com">
-
-<style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo Stream</title>
+    <link rel="stylesheet" type="text/css" href="application.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <style>
 body {
     font-family: 'Annie Use Your Telescope';font-size: 22px;
 }
@@ -21,68 +21,34 @@ body {
         background-color: grey;
       }
     </style>
-</head>
-<body>
-<!DOCTYPE html>
-
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>My Todo List</title>
-	<link rel="stylesheet" type="text/css" href="application.css" />
-	<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
-  <meta name="google-signin-client_id" content="436465418792-sjkus8s5biir1v2o1c0n9hq9q1c9mmph.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-<style>
-body {
-    font-family: 'Annie Use Your Telescope';font-size: 22px;
-}
-</style>
-    <style>
-      #map {
-        width: 100%;
-        height: 400px;
-        background-color: grey;
-      }
-    </style>
-</head>
-<body>
-<body>
-  <h1>Welcome</h1>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <script>
-    function onSignIn(googleUser) {
-      // get user profile information
-      console.log(googleUser.getBasicProfile())
-    }
-  </script>
-  <script>
-  function x(googleUser){
-	if onSignIn(){
-	window.location.assign("todos/index");
-	}
-	}
-	
- </script>
- <script>
- 	          function error(googleUser) {
-            console.error(googleUser);
-          }
- </script>
- <button onclick="signOut()">Sign out</button>
-</body>
-<div id="map"></div>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="title">Todo Stream</h1>
+      <form
+        accept-charset="UTF-8"
+        action="https://https://cloudappservices-api.herokuapp.com/todos"
+        method="POST"
+        id="todo_form"
+        autocomplete="off"
+      >
+        <input type="text" name="todo[task]" value="" id="task_input" />
+        <input
+          type="submit"
+          value="Submit"
+          onclick="window.sendForm(event)"
+          class="task_submit"
+        />
+      </form>
+      <div id="container"></div>
+    </div>
+    <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
 <script defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7v_mweoO2lcbzFZElDMTkmX_cuWDcjOA&callback=initMap">
 </script>
-<script>
-</body>
-<footer>
-<script type="text/javascript" src="application.js"></script>
-</footer>
+  </body>
+  <footer>
+    <script type="text/javascript" src="application.js"></script>
+  </footer>
 </html>
-
-
-

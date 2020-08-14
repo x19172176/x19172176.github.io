@@ -20,6 +20,13 @@ body {
 	<form accept-charset="UTF-8" action="https://cloudappservices-api.herokuapp.com/todos" method="POST" id="todo_form" autocomplete="off">
 	<input type="text" name="todo[task]" value="" id="task_input"/>
 	<input type="submit" value="Add to list" onclick="window.sendForm(event)" class="task_submit"/>
+		    <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6Ldb874ZAAAAAJx4n1rGTJKv3EqC9Wt5BwEotMQI'
+        });
+      };
+    </script>
 	</form>
 	<div id="container">
 	</div>
@@ -27,7 +34,10 @@ body {
 <script defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7v_mweoO2lcbzFZElDMTkmX_cuWDcjOA&callback=initMap">
 </script>
-	<meta name="google-site-verification" content="Ndnx3z26KZBvDjB44MuQS35-WsWrgaotNWnUfWJ__yA" />
+	    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+
 </body>
 <footer>
 <script type="text/javascript" src="application.js"></script>

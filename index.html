@@ -20,7 +20,7 @@ body {
 	<form accept-charset="UTF-8" action="https://cloudappservices-api.herokuapp.com/todos" method="POST" id="todo_form" autocomplete="off">
 	<input type="text" name="todo[task]" value="" id="task_input"/>
 	<input type="submit" value="Add to list" onclick="window.sendForm(event)" class="task_submit"/>
-	<div class="g-recaptcha" data-sitekey="6LeK874ZAAAAAAD9czwwfS9MflWzu59JlqHAvw7" data-callback="correctCaptcha"></div>
+	<div class="g-recaptcha" data-sitekey="6LeK874ZAAAAAAD9czwwfS9MflWzu59JlqHAvw7_" data-callback="correctCaptcha" data-expired-callback="expiredRecaptchaCallback"></div>
        </div>
 	    
     </script>

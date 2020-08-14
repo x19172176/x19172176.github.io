@@ -76,13 +76,18 @@ var correctCaptcha = function(response) {
         alert(response);
     };
 
-function submit(){ 
-     var response = grecaptcha`.`getResponse();
-     if(response != '0'){
-           //captcha validated and got response code
-           alert("the captcha has been filled");
-     }else{
-           //not validated or not clicked
-           alert("Please fill the captcha!");
-     }
-}
+document.getElementById("my_captcha_form").addEventListener("submit",function(evt)
+  {
+  
+  var response = grecaptcha.getResponse();
+  if(response.length == 0) 
+  { 
+    //reCaptcha not verified
+    alert("please verify you are humann!"); 
+    evt.preventDefault();
+    return false;
+  }
+  //captcha verified
+  //do the rest of your validations here
+  
+});
